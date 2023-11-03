@@ -22,7 +22,18 @@ const alunos = [
     }
   ]
 
-  const alunosComMedia = alunos.map(aluno => {
-    aluno.notas.forEach()
-
-  })
+  const mediaGeral = alunos.map((aluno) => {
+    const notas = aluno.notas.map((nota) => nota.nota);
+    let somaNotas = 0;
+    
+    for (let i = 0; i < notas.length; i++) {
+    somaNotas += notas[i];
+    }
+    
+    const mediaGeral = somaNotas / notas.length;
+    return { ...aluno, mediaGeral };
+    });
+    
+    mediaGeral.map((aluno) => {
+    console.log(`${aluno.nome}, tem media geral de ${aluno.mediaGeral}`);
+    });
